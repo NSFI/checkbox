@@ -92,8 +92,8 @@ class Checkbox extends Component {
       autoFocus,
       value,
       required,
-      innerStyle,
       color,
+      innerStyle,
       ...others,
     } = this.props;
 
@@ -110,9 +110,10 @@ class Checkbox extends Component {
       [`${prefixCls}-disabled`]: disabled,
     });
 
+    const innerColorStyle = {};
     if (color && checked) {
-      innerStyle.backgroundColor = color;
-      innerStyle.borderColor = color;
+      innerColorStyle.backgroundColor = color;
+      innerColorStyle.borderColor = color;
     }
 
     return (
@@ -136,7 +137,7 @@ class Checkbox extends Component {
           value={value}
           {...globalProps}
         />
-        <span style={innerStyle} className={`${prefixCls}-inner`} />
+        <span style={{ ...innerStyle, ...innerColorStyle }} className={`${prefixCls}-inner`} />
       </span>
     );
   }
