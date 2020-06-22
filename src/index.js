@@ -7,6 +7,7 @@ class Checkbox extends Component {
     prefixCls: 'rc-checkbox',
     className: '',
     style: {},
+    innerStyle: {},
     type: 'checkbox',
     defaultChecked: false,
     onFocus() {},
@@ -90,6 +91,7 @@ class Checkbox extends Component {
       autoFocus,
       value,
       required,
+      innerStyle,
       ...others,
     } = this.props;
 
@@ -127,7 +129,7 @@ class Checkbox extends Component {
           value={value}
           {...globalProps}
         />
-        <span className={`${prefixCls}-inner`} />
+        <span style={innerStyle} className={`${prefixCls}-inner`} />
       </span>
     );
   }
