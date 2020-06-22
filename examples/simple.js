@@ -2,8 +2,8 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Checkbox from 'rc-checkbox';
-import 'rc-checkbox/assets/index.less';
+import Checkbox from 'fishd-checkbox';
+import 'fishd-checkbox/assets/index.less';
 
 function onChange(e) {
   console.log('Checkbox checked:', (e.target.checked));
@@ -28,6 +28,8 @@ class SimpleDemo extends React.Component {
             <label>
               <Checkbox
                 checked
+                color="red"
+                innerStyle={ { borderRadius: '50%' } }
                 onChange={onChange}
                 disabled={this.state.disabled}
               />

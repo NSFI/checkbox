@@ -8,6 +8,7 @@ class Checkbox extends Component {
     className: '',
     style: {},
     innerStyle: {},
+    color: '',
     type: 'checkbox',
     defaultChecked: false,
     onFocus() {},
@@ -92,6 +93,7 @@ class Checkbox extends Component {
       value,
       required,
       innerStyle,
+      color,
       ...others,
     } = this.props;
 
@@ -107,6 +109,11 @@ class Checkbox extends Component {
       [`${prefixCls}-checked`]: checked,
       [`${prefixCls}-disabled`]: disabled,
     });
+
+    if (color && checked) {
+      innerStyle.backgroundColor = color;
+      innerStyle.borderColor = color;
+    }
 
     return (
       <span className={classString} style={style}>
