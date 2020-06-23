@@ -111,7 +111,7 @@ class Checkbox extends Component {
     });
 
     const innerColorStyle = {};
-    if (color && checked) {
+    if (color && checked && !disabled) {
       innerColorStyle.backgroundColor = color;
       innerColorStyle.borderColor = color;
     }
